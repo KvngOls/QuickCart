@@ -100,8 +100,6 @@ function App() {
               <Route path="customers" element={<AdminCustomersPage />} />
               <Route path="categories" element={<AdminCategoriesPage />} />
               <Route path="settings" element={<AdminSettingsPage />} />
-              <Route path="" element={} />
-              <Route path="" element={} />
 
               {/* {Any other admin address shows the 404 page inside the admin layout} */}
               <Route path="*" element={<NotFoundPage />} />
