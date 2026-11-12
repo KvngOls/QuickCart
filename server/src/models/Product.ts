@@ -44,7 +44,6 @@ export interface IProduct {
   lowStockThreshold: number;
   images: string[]; // images[0] is the photo on product cards
   gallery: string[]; // large photos for the product details page (empty = use images)
-  photo?: string; // photo name on Cloudinary when it isn't the slugig, e.g. "bluetooth-portable-speakr"
   colors: IProductColor[];
   tags: string[];
   badge?: string; //eg "SALE", "TOP SELLER", "NEW"
