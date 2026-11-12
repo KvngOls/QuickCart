@@ -32,11 +32,6 @@ export const seedDatabase = async () => {
   // 3. Which photos are on cloudinary?
   const photoIds = await listProductPhotoId();
 
-  console.log(
-    "POSSIBLE SKILLET IMAGES:",
-    photoIds.filter((id) => /cast|iron|pan|cookware|kitchen/i.test(id)),
-  );
-
   // 4. Save the products
   const saveProducts = await Product.insertMany(
     demoProducts(categoryIds, photoIds),

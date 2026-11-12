@@ -51,23 +51,15 @@ export const makeRatingCounts = (
 export const photosFor = (slug: string, photoIds: string[]): string[] => {
   const prefix = `${PHOTO_FOLDER}/${slug}-`;
 
-  const matches = photoIds.filter((id) => id.startsWith(prefix));
+  return photoIds
 
-  console.log({
-    slug,
-
-    expectedPrefix: prefix,
-
-    matches,
-  });
-
-  return matches
+    .filter((id) => id.startsWith(prefix))
 
     .filter((id) => /^\d+$/.test(id.slice(prefix.length)))
 
-    .sort((a, b) => {
-      return Number(a.slice(prefix.length)) - Number(b.slice(prefix.length));
-    })
+    .sort(
+      (a, b) => Number(a.slice(prefix.length)) - Number(b.slice(prefix.length)),
+    )
 
     .map(photoUrl);
 };
