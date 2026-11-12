@@ -51,13 +51,24 @@ export const makeRatingCounts = (
 export const photosFor = (slug: string, photoIds: string[]): string[] => {
   const prefix = `${PHOTO_FOLDER}/${slug}-`;
 
-  return photoIds
-    .filter((id) => {
-      return id.startsWith(prefix) && /^\d+$/.test(id.slice(prefix.length));
-    })
+  const matches = photoIds.filter((id) => id.startsWith(prefix));
+
+  console.log({
+    slug,
+
+    expectedPrefix: prefix,
+
+    matches,
+  });
+
+  return matches
+
+    .filter((id) => /^\d+$/.test(id.slice(prefix.length)))
+
     .sort((a, b) => {
       return Number(a.slice(prefix.length)) - Number(b.slice(prefix.length));
     })
+
     .map(photoUrl);
 };
 
@@ -96,7 +107,7 @@ const buildProduct = (
     trackStock: true,
     stock: item.stock,
     lowStockThreshold: 10,
-    images: photosFor(slug, photoIds),
+    images: photosFor(item.photo ?? slug, photoIds),
     gallery: [], // empty = the product page uses images
     colors: item.colors ?? [],
     tags: item.tags ?? [],

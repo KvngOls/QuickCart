@@ -687,7 +687,7 @@ export const products: SeedProduct[] = [
   },
   {
     name: "Design Systems Handbook",
-    photo: "design-system-handbook",
+    photo: "design-systems-handbook",
     category: "books",
     brand: "Techstudio",
     sku: "QC-BK-301",
@@ -792,7 +792,7 @@ export const products: SeedProduct[] = [
   },
   {
     name: "Minimalist LED Desk Lamp",
-    photo: "minimalistic-led-desk-lamp",
+    photo: "minimalist-led-desk-lamp",
     category: "home-living",
     brand: "Aurora Home",
     sku: "QC-HM-411",
@@ -1529,7 +1529,7 @@ export const products: SeedProduct[] = [
   },
   {
     name: "Bluetooth Portable Speaker",
-    photo: "bluethoot-portable-speaker",
+    photo: "bluetooth-portable-speaker",
     category: "electronics",
     brand: "Aura",
     sku: "QC-EL-203",
@@ -2477,7 +2477,7 @@ export const products: SeedProduct[] = [
   },
   {
     name: "Daily Planner & Hardcover Journal",
-    photo: "daily-planner-n-hardcover-journal",
+    photo: "daily-planner-and-hardcover-journal",
     category: "books",
     brand: "Techstudio",
     sku: "QC-BK-302",
@@ -3431,6 +3431,7 @@ export const products: SeedProduct[] = [
   },
   {
     name: "Court Classic Lows",
+    photo: "court-classic-lows-urbanstrides",
     category: "fashion",
     brand: "UrbanStride",
     sku: "QC-FA-106",
@@ -3539,6 +3540,7 @@ export const products: SeedProduct[] = [
   // ---------- Product Details page: bundle add-ons and related products ----------
   {
     name: "Protective Hard Shell Case",
+    photo: "protective-hardshell-case",
     category: "electronics",
     brand: "Aura Sound Labs",
     sku: "QC-AU-311",
@@ -3749,6 +3751,7 @@ export const products: SeedProduct[] = [
   },
   {
     name: "Fast Dual USB-C GaN Charger 35W",
+    photo: "fast-dual-usbc-gan-charger",
     category: "electronics",
     brand: "Voltron",
     sku: "QC-AU-313",
@@ -4068,7 +4071,7 @@ export const products: SeedProduct[] = [
   },
   {
     name: "Magnetic Headphone Stand & USB Hub",
-    photo: "magnetic-headphone-stand-n-usb-hub",
+    photo: "magnetic-headphone-stand-and-usb-hub",
     category: "electronics",
     brand: "Aura Sound Labs",
     sku: "QC-AU-316",

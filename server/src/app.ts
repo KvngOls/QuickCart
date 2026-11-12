@@ -7,6 +7,7 @@ import { env } from "./config/env";
 import { notFound } from "./middleware/NotFound";
 import cors from "cors";
 import routes from "./routes/Index";
+import { errorHandler } from "./middleware/errorHandler";
 
 // STEP 3 : create the Express app
 // the express app: allow the website to call us(cors), read json bodies, server uploaded photos, put every route under /api, then the 404 ad error handlers.
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/api", routes); // every route lives under /api, e.g /api/health
 
 app.use(notFound); // must dome after the routes: runs only when nothing above matched
+app.use(errorHandler); // must be last: catches errors thrown by any route above
 
 export default app;
 
