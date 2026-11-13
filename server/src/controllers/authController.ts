@@ -5,17 +5,13 @@ import { Request, Response } from "express";
 import { User } from "../models/User";
 import { AppError } from "../utils/AppError";
 import { signToken } from "../utils/token";
+import { checkNewPassword } from "../utils/password";
 
 // STEP 18 (part 3): The auth controller
 // POST /api/auth/register -> create an account, reply with a token
 // GET /api/auth/me -> the logged-in user (protect)
 // POST /api/auth/logout -> "logged out" (protect)
 // GET /api/auth/check-email?email=->{available: true/false} (the "Available" tick)
-
-// The rules from the registration screen: 8+ characters, an uppercase letter and a number.
-// (?=.[A-Z]) = "somewhere there is an A-Z", (?=\d) = "somewhere there is a 0-9", .{8,} = 8 or more characters
-
-const PASSWORD_RULE = /^(?=.*[A-Z])(?=.\d).{8,}$/;
 
 // POST /api/auth/register
 
@@ -42,16 +38,9 @@ export const register = async (req: Request, res: Response) => {
   // The model only checks "8 characters"; the uppercase + number rules are checked here.
   // (They can't go in the model: the model sees the HASH when it validates on later saves.)
 
-  if (typeof password != "string" || !PASSWORD_RULE.test(password)) {
-    throw new AppError(
-      400,
-      "Password must be at least 8 characters with one uppercase letter (A-Z) and one number (0-9)",
-    );
-  }
+  // 8+ characters, uppercase, number, and both passwords match (utils/password.ts)
 
-  if (password !== confirmPassword) {
-    throw new AppError(400, "Passwords do not match");
-  }
+  checkNewPassword(password, confirmPassword);
 
   // Pick the fields one by one. NEVER do User.create(req.body): someone could send "role": "admin"!
   // Missing names or a bad email -> the model's messages (400). Email already used -> 409.
