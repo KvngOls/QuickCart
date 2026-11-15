@@ -32,6 +32,9 @@ export const env = {
 
   // Brevo sends the emails (see utils/sendEmail.ts). Empty = emails are printed in the terminal instead
   brevoApiKey: process.env.BREVO_API_KEY || "",
+  brevoListId: process.env.BREVO_LIST_ID
+    ? Number(process.env.BREVO_LIST_ID)
+    : undefined,
   emailFrom: process.env.EMAIL_FROM || "", // must be a sender you verified in Brevo
   emailFromName: process.env.EMAIL_FROM_NAME || "QuickCart",
 };
