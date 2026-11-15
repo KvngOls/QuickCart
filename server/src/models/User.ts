@@ -50,7 +50,7 @@ type UserModel = Model<IUser, {}, IUserMethods>;
 
 // An address is a "sub-document": it lives inside the user, not in its own collection
 
-const addressSchema = new Schema<IAddress>({
+export const addressSchema = new Schema<IAddress>({
   label: { type: String, default: "Home", trim: true },
   fullName: {
     type: String,
