@@ -5,6 +5,7 @@ import { Router } from "express";
 import categoryRoutes from "../routes/categoryRoutes";
 import productRoutes from "../routes/productRoutes";
 import accountRoutes from "../routes/accountRoutes";
+import promoRoutes from "../routes/promoRoutes";
 
 // step 5: join the routes and add a health check
 // one router joins all the route fies. app.ts mounts it at /api, so a route like "/products" becomes /api/products
@@ -18,6 +19,7 @@ router.get("health", (_req, res) => {
 router.use("/categories", categoryRoutes); // /api/categories...
 router.use("/products", productRoutes); // /api/products
 router.use("/account", accountRoutes); // /api/account
+router.use("/promo-codes", promoRoutes); // /api/promo-codes
 
 export default router;
 
