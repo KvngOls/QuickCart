@@ -31,12 +31,17 @@ import {
   getCustomer,
   getCustomers,
 } from "../controllers/adminCustomerController";
+import { getDashboard } from "../controllers/adminDashboardController";
 
 const router = Router();
 
 // One line guards EVERY route below: logged in (protect), and an admin (adminOnly). Order matters.
 
 router.use(protect, adminOnly);
+
+// Dashboard (STEP 27)
+
+router.get("/dashboard", getDashboard);
 
 // Photos: uploadPhotos (multer) reads the files first, then the controller sends them to Cloudinary
 
