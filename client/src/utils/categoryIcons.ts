@@ -38,7 +38,7 @@ const iconNameByCategory: Record<string, string> = {
   Fashion: "checkroom",
   "Home & Living": "chair",
   Beauty: "spa",
-  Sports: "Fitness_center",
+  Sports: "fitness_center",
   Books: "menu_book",
   Ofiice: "desk",
   Kitchen: "soup_kitchen",
