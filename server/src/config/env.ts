@@ -11,7 +11,7 @@ dotenv.config({ quiet: true });
 // Next: STEP 2 (connect to MongoDb) -> server/src/config/database.ts
 
 export const env = {
-  port: Number(process.env.PORT) || 5000,
+  port: Number(process.env.PORT) || 5001,
   mongoUri:
     process.env.mongoURI ||
     "mongodb+srv://oluwaseunraji123_db_user:Q7GgCSjzjAAGpxKx@cluster0.aj1pde7.mongodb.net/QuickCart",

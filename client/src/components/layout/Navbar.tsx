@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/Navlogo.png";
 import { MdOutlineLocalMall, MdSearch } from "react-icons/md";
 import AccountMenu from "./AccountMenu";
+import { useCart } from "../../context/CartContext";
 
 const NavLinks = [
   { label: "Home", to: "/" },
@@ -10,6 +11,7 @@ const NavLinks = [
 ];
 
 const Navbar = () => {
+  const { count } = useCart();
   return (
     <>
       <nav className="sticky top-0 z-50 bg-surface print:hidden shadow-[0_1px_3px_rgba(11, 28, 48, 0.05)]">
@@ -66,13 +68,20 @@ const Navbar = () => {
 
             <Link
               to="/cart"
-              aria-label="Cart"
+              aria-label={`Cart, ${count} ${count === 1 ? "item" : "items"}`}
               className="relative flex size-10 items-center justify-center rounded-full bg-field text-ink transitioon-colors hover:bg-primary-light"
             >
               <MdOutlineLocalMall size={20} aria-hidden="true" />
-              <span className="absolute -top-1 -right-1 flex h-4.5 min-w-4.5 animate-bumb items-center justify-center rounded-full bg-danger px-1 text-xs leading-none font-bold text-white">
-                1
-              </span>
+              {/* key={count}: a new number = a new element, so the "bump" animation plays again */}
+              {count > 0 && (
+                <span
+                  key={count}
+                  aria-hidden="true"
+                  className="absolute -top-1 -right-1 flex h-4.5 min-w-4.5 animate-bumb items-center justify-center rounded-full bg-danger px-1 text-xs leading-none font-bold text-white"
+                >
+                  {count > 99 ? "99+" : count}
+                </span>
+              )}
             </Link>
 
             <AccountMenu />
