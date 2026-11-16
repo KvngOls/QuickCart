@@ -15,6 +15,7 @@ import { PromoCode } from "../models/PromoCode";
 import { promoCodes } from "./promoCodes";
 import { Order } from "../models/Order";
 import { Counter } from "../models/Counter";
+import { createDemoOrders, demoShoppers } from "./demoOrders";
 
 // STEP 13: The seed command
 // seedDatabase() does the work and is exported, so the demo panel can reuse it.
@@ -99,13 +100,18 @@ export const seedDatabase = async () => {
 
   const savedPromoCodes = await PromoCode.insertMany(promoCodes);
 
-  // 7. A summary ...
+  // 8. Demo orders (STEP 28): 4 more shoppers and ~40 orders, so the dashboard and Order History have data
+
+  const demoOrderCount = await createDemoOrders(saveProducts);
+
+  // 9. A summary for whoever runs the seed...
 
   return {
     categories: savedCategories.length,
     products: saveProducts.length,
-    users: savedUsers.length,
+    users: savedUsers.length + demoShoppers.length,
     promoCodes: savedPromoCodes.length,
+    orders: demoOrderCount,
     withoutPhotos: saveProducts
       .filter((product) => {
         return product.images.length === 0;
@@ -124,7 +130,7 @@ const runSeed = async () => {
     const result = await seedDatabase();
 
     console.log(
-      `Seeded ${result.categories} categories, ${result.products} products, ${result.users} users and ${result.promoCodes} promocodes`,
+      `Seeded ${result.categories} categories, ${result.products} products, ${result.users} users, ${result.promoCodes} promocodes and ${result.orders} demo orders`,
     );
 
     if (result.withoutPhotos.length > 0) {

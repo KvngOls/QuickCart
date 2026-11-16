@@ -83,6 +83,12 @@ const userSchema = new Schema<IUser, UserModel, IUserMethods>(
       trim: true,
     },
 
+    lastName: {
+      type: String,
+      required: [true, "Last name is required"],
+      trim: true,
+    },
+
     email: {
       type: String,
       required: [true, "Email is required"],
