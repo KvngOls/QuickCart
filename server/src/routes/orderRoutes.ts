@@ -19,8 +19,7 @@ router.use(protect); // you must be logged in to place or see orders
 
 router.post("/", placeOrder);
 router.get("/", getMyOrders);
-router.get("/summary");
-getOrderSummary; // BEFORE "/:orderNumber", or "summary" would be read as an order number
+router.get("/summary", getOrderSummary); // BEFORE "/:orderNumber", or "summary" would be read as an order number
 router.get("/:orderNumber", getOrder);
 router.patch("/:orderNumber/cancel", cancelOrder);
 
