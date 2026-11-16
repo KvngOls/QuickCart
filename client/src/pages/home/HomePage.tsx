@@ -1,6 +1,6 @@
 import BestSellers from "../../components/home/BestSellers";
 import CategoryGrid from "../../components/home/CategoryGrid";
-import FeaturedProductss from "../../components/home/FeaturedProductss";
+import FeaturedProductss from "../../components/home/FeaturedProducts";
 import FlashSale from "../../components/home/FlashSale";
 import HeroSection from "../../components/home/HeroSection";
 import NewArrivals from "../../components/home/NewArrivals";
