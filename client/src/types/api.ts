@@ -40,7 +40,7 @@ export type User = {
   email: string;
   phone?: string;
   role: "customer" | "admin";
-  isEmailVerifies: boolean;
+  isEmailVerified: boolean;
   addresses: Address;
   savedItems: string[]; // product ids
   createdAt: string; // dates arrive as text in JSON: "2026-11-15T16:09:36.218Z"
