@@ -35,7 +35,7 @@ const Navbar = () => {
                       end={link.to === "/"}
                       className={({ isActive }) => {
                         return isActive
-                          ? "block rounded-full bg-primary-hover px-4 py-1 text-base leading-6 font-semibold"
+                          ? "block rounded-full bg-primary-hover px-4 py-1 text-base leading-6 font-semibold text-white"
                           : "block px-4 py-1 text-[15px] leading-5 font-medium text-ink-soft transition-colors hover:text-primary";
                       }}
                     >

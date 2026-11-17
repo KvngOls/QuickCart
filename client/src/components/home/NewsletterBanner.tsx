@@ -37,7 +37,7 @@ const NewsletterBanner = () => {
   return (
     <section
       aria-labelledby="newsletter-title"
-      className="relative overflow-hidden rounded-3xl bg-primary px-6 py-12 text-center text-white shadow-banner"
+      className="relative overflow-hidden rounded-3xl bg-primary px-6 py-12 text-center text-white shadow-banner mb-5"
     >
       <div
         aria-hidden="true"
