@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "server",
   "version": "1.0.0",
   "description": "",
@@ -11,6 +12,9 @@
     "typecheck": "tsc --noEmit",
     "seed": "tsx src/data/seed.ts",
     "upload-images": "tsx src/data/uploadImages.ts"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "keywords": [],
   "author": "",
