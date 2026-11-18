@@ -92,7 +92,7 @@ function App() {
 
           {/* {Admin pages: admin menu + top bar, no store header or footer. Only admins get in} */}
 
-          <Route>
+          <Route element={<ProtectedRoute adminOnly />}>
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboardPage />} />
               <Route path="products" element={<AdminProductsPage />} />
