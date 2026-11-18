@@ -13,7 +13,7 @@ dotenv.config({ quiet: true });
 export const env = {
   port: Number(process.env.PORT) || 5001,
   mongoUri:
-    process.env.mongoURI ||
+    process.env.MONGO_URI ||
     "mongodb+srv://oluwaseunraji123_db_user:Q7GgCSjzjAAGpxKx@cluster0.aj1pde7.mongodb.net/QuickCart",
   jwtSecret: process.env.JWT_SECRET || "dw-secret-change-mine",
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "15d", // remain logged in for 15days
