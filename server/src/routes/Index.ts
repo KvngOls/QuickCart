@@ -18,7 +18,7 @@ const router = Router();
 
 // GET /api/health: a quick check that the api is running
 
-router.get("health", (_req, res) => {
+router.get("/health", (_req, res) => {
   res.json({ status: "ok", message: "QuickCart Api is running" });
 });
 router.use("/categories", categoryRoutes); // /api/categories...
